@@ -1,5 +1,5 @@
 SELECT p.product_id
-, COALESCE(ROUND(SUM(u.units * p.price) / SUM(u.units),2), 0) AS average_price
+, IFNULL(ROUND(SUM(u.units * p.price) / SUM(u.units),2), 0) AS average_price
 
 FROM Prices p
 LEFT JOIN UnitsSold u
