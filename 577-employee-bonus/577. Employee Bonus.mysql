@@ -1,9 +1,9 @@
-SELECT e.name, b.bonus
+SELECT name, bonus
 
-FROM Employee e
+FROM Employee
 
-LEFT JOIN Bonus b
+LEFT JOIN Bonus
 
-ON e.empId = b.empId
+ON Employee.empId = Bonus.empId
 
-WHERE b.bonus < 1000 OR b.bonus IS NULL;
+WHERE bonus < 1000 OR ISNULL(bonus);
