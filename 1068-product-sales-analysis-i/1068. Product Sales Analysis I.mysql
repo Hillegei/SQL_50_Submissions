@@ -1,5 +1,5 @@
-SELECT P.product_name, S.year, S.price
+SELECT Product.product_name, s.year, s.price
 
-FROM Sales S
+FROM Sales s
 
-JOIN Product P USING(product_id);
+LEFT JOIN Product ON s.product_id = Product.product_id;
