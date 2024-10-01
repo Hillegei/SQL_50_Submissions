@@ -9,7 +9,7 @@ SELECT DISTINCT Cte.buyer_id
 FROM Cte
 WHERE Cte.product_name = 'S8'
 AND Cte.buyer_id NOT IN (
-    SELECT c.buyer_id
+    SELECT DISTINCT c.buyer_id
     FROM Cte c
     WHERE c.product_name = 'iPhone'
 ) ;
